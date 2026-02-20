@@ -1,7 +1,6 @@
 # Amazon RDS PostgreSQL to OCI PostgreSQL Zero-Downtime Migration
 
-**Author:** Shadab Mohammad, Master Principal Cloud Architect (Oracle Partner
-Consultancy)  
+**Author:** Shadab Mohammad, Master Principal Cloud Architect 
 **Version:** 1.0  
 **Date:** 2026-02-20  
 **Audience:** Cloud Architects, Database Engineers, Migration Program Managers
@@ -41,25 +40,6 @@ re-use for assessments, pilot migrations, and scaled production cutovers.
 ## 3. Reference Architecture
 
 ```text
-┌──────────────────────────────────────────┐
-│ AWS VPC                                 │
-│  ┌──────────────────────────────┐        │
-│  │ Amazon RDS / Aurora PG       │        │
-│  │  - logical_replication = on │◄───────┐│
-│  └──────────────────────────────┘        ││
-│                                          ││
-└──────────────────────────────────────────┘│
-          ▲  Secure L3/L4 Connectivity     ││
-          │  (VPN / IPSec / FastConnect)   ││
-┌──────────────────────────────────────────┐│
-│ OCI VCN                                 ││
-│  ┌────────────────────────────┐          ││
-│  │ GoldenGate Deployment     │──────────┘│
-│  └────────────────────────────┘           │
-│  ┌────────────────────────────┐           │
-│  │ OCI PostgreSQL Service    │◄──────────┘
-│  └────────────────────────────┘
-└──────────────────────────────────────────┘
 ```
 
 - **Connectivity:** Use FastConnect + VPN or Site-to-Site VPN with redundant
@@ -295,7 +275,7 @@ SELECT add_random_orders(20000);
 
 ---
 
-## 10. Alternate Approach: pglogical (Initial Load + CDC)
+## 10. Alternate Approach: pglogical (Initial Load + CDC) *BETA*
 
 For workloads that prefer native logical replication without GoldenGate
 licensing, pglogical offers an integrated alternative.
@@ -409,5 +389,3 @@ SELECT pglogical.create_subscription(
 5. [OCI Database with PostgreSQL](https://docs.oracle.com/en/engineered-systems/oci-database-postgresql/)
 
 ---
-
-## Prepared for: AWS-to-OCI Migration Initiative
