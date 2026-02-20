@@ -1,4 +1,3 @@
-# Postgres-RDS-To-OCI-Solution-Guide-Scripts
 # Amazon RDS PostgreSQL to OCI PostgreSQL Zero-Downtime Migration
 
 **Author:** Shadab Mohammad, Master Principal Cloud Architect 
